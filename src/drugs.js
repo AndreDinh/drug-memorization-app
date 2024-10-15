@@ -1,0 +1,411 @@
+const drugs = [
+    // Cardiovascular Drugs - RAAS
+    {
+        brand: 'Prinivil, Zestril',
+        generic: 'Lisinopril',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Pri-ni-vil, Zes-tril',
+        genericSyllables: 'Li-si-no-pril',
+    },
+    {
+        brand: 'Prinzide, Zestoretic',
+        generic: 'Lisinopril/hydrochlorothiazide',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Prin-zide, Ze-sto-re-tic',
+        genericSyllables: 'Li-si-no-pril / hy-dro-chlo-ro-thi-a-zide',
+    },
+    {
+        brand: 'Vasotec',
+        generic: 'Enalapril',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Va-so-tec',
+        genericSyllables: 'E-na-la-pril',
+    },
+    {
+        brand: 'Altace',
+        generic: 'Ramipril',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Al-tace',
+        genericSyllables: 'Ra-mi-pril',
+    },
+    {
+        brand: 'Cozaar',
+        generic: 'Losartan',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Co-zaar',
+        genericSyllables: 'Lo-sar-tan',
+    },
+    {
+        brand: 'Benicar',
+        generic: 'Olmesartan',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Ben-i-car',
+        genericSyllables: 'Ol-me-sar-tan',
+    },
+    {
+        brand: 'Diovan',
+        generic: 'Valsartan',
+        category: 'Cardiovascular - RAAS',
+        brandSyllables: 'Di-o-van',
+        genericSyllables: 'Val-sar-tan',
+    },
+
+    // Cardiovascular Drugs - Beta Blockers
+    {
+        brand: 'Tenormin',
+        generic: 'Atenolol',
+        category: 'Cardiovascular - Beta Blockers',
+        brandSyllables: 'Ten-or-min',
+        genericSyllables: 'A-ten-o-lol',
+    },
+    {
+        brand: 'Lopressor',
+        generic: 'Metoprolol tartrate',
+        category: 'Cardiovascular - Beta Blockers',
+        brandSyllables: 'Lo-pres-sor',
+        genericSyllables: 'Me-to-pro-lol tar-trate',
+    },
+    {
+        brand: 'Toprol XL',
+        generic: 'Metoprolol succinate',
+        category: 'Cardiovascular - Beta Blockers',
+        brandSyllables: 'Top-rol XL',
+        genericSyllables: 'Me-to-pro-lol suc-ci-nate',
+    },
+    // {
+    //     brand: 'Bystolic',
+    //     generic: 'Nebivolol',
+    //     category: 'Cardiovascular - Beta Blockers',
+    //     brandSyllables: 'By-sto-lic',
+    //     genericSyllables: 'Ne-bi-vo-lol',
+    // },
+    // {
+    //     brand: 'Inderal',
+    //     generic: 'Propranolol',
+    //     category: 'Cardiovascular - Beta Blockers',
+    //     brandSyllables: 'In-de-ral',
+    //     genericSyllables: 'Pro-pran-o-lol',
+    // },
+    // {
+    //     brand: 'Coreg',
+    //     generic: 'Carvedilol',
+    //     category: 'Cardiovascular - Beta Blockers',
+    //     brandSyllables: 'Co-reg',
+    //     genericSyllables: 'Car-ve-di-lol',
+    // },
+
+    // Cardiovascular Drugs - Calcium Channel Blockers
+    {
+        brand: 'Procardia XL',
+        generic: 'Nifedipine XL',
+        category: 'Cardiovascular - Calcium Channel Blockers',
+        brandSyllables: 'Pro-car-dia XL',
+        genericSyllables: 'Ni-fe-di-pine XL',
+    },
+    {
+        brand: 'Norvasc',
+        generic: 'Amlodipine',
+        category: 'Cardiovascular - Calcium Channel Blockers',
+        brandSyllables: 'Nor-vasc',
+        genericSyllables: 'Am-lo-di-pine',
+    },
+    // {
+    //     brand: 'Lotrel',
+    //     generic: 'Amlodipine/benazepril',
+    //     category: 'Cardiovascular - Calcium Channel Blockers',
+    //     brandSyllables: 'Lo-trel',
+    //     genericSyllables: 'Am-lo-di-pine / ben-a-ze-pril',
+    // },
+    {
+        brand: 'Cardizem CD',
+        generic: 'Diltiazem',
+        category: 'Cardiovascular - Calcium Channel Blockers',
+        brandSyllables: 'Car-di-zem CD',
+        genericSyllables: 'Dil-ti-a-zem',
+    },
+
+    // Cardiovascular Drugs - Diuretics
+    {
+        brand: 'Microzide',
+        generic: 'Hydrochlorothiazide',
+        category: 'Cardiovascular - Diuretics',
+        brandSyllables: 'Mi-cro-zide',
+        genericSyllables: 'Hy-dro-chlo-ro-thi-a-zide',
+    },
+    // {
+    //     brand: 'Zaroxolyn',
+    //     generic: 'Metolazone',
+    //     category: 'Cardiovascular - Diuretics',
+    //     brandSyllables: 'Za-rox-o-lyn',
+    //     genericSyllables: 'Me-to-la-zone',
+    // },
+    {
+        brand: 'Lasix',
+        generic: 'Furosemide',
+        category: 'Cardiovascular - Diuretics',
+        brandSyllables: 'La-six',
+        genericSyllables: 'Fu-ro-se-mide',
+    },
+    // {
+    //     brand: 'Demadex',
+    //     generic: 'Torsemide',
+    //     category: 'Cardiovascular - Diuretics',
+    //     brandSyllables: 'De-ma-dex',
+    //     genericSyllables: 'Tor-se-mide',
+    // },
+    // {
+    //     brand: 'Bumex',
+    //     generic: 'Bumetanide',
+    //     category: 'Cardiovascular - Diuretics',
+    //     brandSyllables: 'Bu-mex',
+    //     genericSyllables: 'Bu-me-ta-nide',
+    // },
+    // {
+    //     brand: 'Aldactone',
+    //     generic: 'Spironolactone',
+    //     category: 'Cardiovascular - Diuretics',
+    //     brandSyllables: 'Al-dac-tone',
+    //     genericSyllables: 'Spi-ro-no-lac-tone',
+    // },
+
+    // Cardiovascular Drugs - Statins
+    {
+        brand: 'Pravachol',
+        generic: 'Pravastatin',
+        category: 'Cardiovascular - Statins',
+        brandSyllables: 'Pra-va-chol',
+        genericSyllables: 'Pra-va-sta-tin',
+    },
+    {
+        brand: 'Zocor',
+        generic: 'Simvastatin',
+        category: 'Cardiovascular - Statins',
+        brandSyllables: 'Zo-cor',
+        genericSyllables: 'Sim-va-sta-tin',
+    },
+    {
+        brand: 'Vytorin',
+        generic: 'Simvastatin/ezetimibe',
+        category: 'Cardiovascular - Statins',
+        brandSyllables: 'Vy-to-rin',
+        genericSyllables: 'Sim-va-sta-tin / e-ze-ti-mibe',
+    },
+    {
+        brand: 'Lipitor',
+        generic: 'Atorvastatin',
+        category: 'Cardiovascular - Statins',
+        brandSyllables: 'Li-pi-tor',
+        genericSyllables: 'A-tor-va-sta-tin',
+    },
+    {
+        brand: 'Crestor',
+        generic: 'Rosuvastatin',
+        category: 'Cardiovascular - Statins',
+        brandSyllables: 'Cres-tor',
+        genericSyllables: 'Ro-su-va-sta-tin',
+    },
+
+    // Cardiovascular Drugs - Other Agents for Dyslipidemias
+    // {
+    //     brand: 'Tricor',
+    //     generic: 'Fenofibrate',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Tri-cor',
+    //     genericSyllables: 'Fe-no-fi-brate',
+    // },
+    // {
+    //     brand: 'Lopid',
+    //     generic: 'Gemfibrozil',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Lo-pid',
+    //     genericSyllables: 'Gem-fi-bro-zil',
+    // },
+    // {
+    //     brand: 'Lovaza',
+    //     generic: 'Omega-3 Acid Ethyl Esters',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Lo-va-za',
+    //     genericSyllables: 'O-me-ga-three Acid E-thyl Es-ters',
+    // },
+    // {
+    //     brand: 'Niaspan',
+    //     generic: 'Niacin',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Ni-a-span',
+    //     genericSyllables: 'Ni-a-cin',
+    // },
+    // {
+    //     brand: 'Zetia',
+    //     generic: 'Ezetimibe',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Ze-tia',
+    //     genericSyllables: 'E-ze-ti-mibe',
+    // },
+    // {
+    //     brand: 'Welchol',
+    //     generic: 'Colesevelam',
+    //     category: 'Cardiovascular - Dyslipidemias',
+    //     brandSyllables: 'Wel-chol',
+    //     genericSyllables: 'Co-le-se-ve-lam',
+    // },
+
+    // Cardiovascular Drugs - Antiplatelets
+    // {
+    //     brand: 'Aspirin',
+    //     generic: 'Aspirin',
+    //     category: 'Cardiovascular - Antiplatelets',
+    //     brandSyllables: 'As-pir-in',
+    //     genericSyllables: 'As-pir-in',
+    // },
+    // {
+    //     brand: 'Aggrenox',
+    //     generic: 'Aspirin/Dipyridamole',
+    //     category: 'Cardiovascular - Antiplatelets',
+    //     brandSyllables: 'Ag-gre-nox',
+    //     genericSyllables: 'As-pir-in / Di-py-ri-da-mole',
+    // },
+    // {
+    //     brand: 'Plavix',
+    //     generic: 'Clopidogrel',
+    //     category: 'Cardiovascular - Antiplatelets',
+    //     brandSyllables: 'Pla-vix',
+    //     genericSyllables: 'Clo-pi-do-grel',
+    // },
+    // {
+    //     brand: 'Effient',
+    //     generic: 'Prasugrel',
+    //     category: 'Cardiovascular - Antiplatelets',
+    //     brandSyllables: 'Ef-fient',
+    //     genericSyllables: 'Pra-su-grel',
+    // },
+    // {
+    //     brand: 'Brilinta',
+    //     generic: 'Ticagrelor',
+    //     category: 'Cardiovascular - Antiplatelets',
+    //     brandSyllables: 'Bri-lin-ta',
+    //     genericSyllables: 'Ti-ca-gre-lor',
+    // },
+
+    // // Cardiovascular Drugs - Traditional Anticoagulants
+    // {
+    //     brand: 'Coumadin',
+    //     generic: 'Warfarin',
+    //     category: 'Cardiovascular - Traditional Anticoagulants',
+    //     brandSyllables: 'Cou-ma-din',
+    //     genericSyllables: 'War-fa-rin',
+    // },
+    // {
+    //     brand: 'Lovenox',
+    //     generic: 'Enoxaparin',
+    //     category: 'Cardiovascular - Traditional Anticoagulants',
+    //     brandSyllables: 'Lo-ve-nox',
+    //     genericSyllables: 'E-nox-a-pa-rin',
+    // },
+
+    // Cardiovascular Drugs - NOACs
+    // {
+    //     brand: 'Pradaxa',
+    //     generic: 'Dabigatran',
+    //     category: 'Cardiovascular - NOACs',
+    //     brandSyllables: 'Pra-dax-a',
+    //     genericSyllables: 'Da-bi-ga-tran',
+    // },
+    // {
+    //     brand: 'Xarelto',
+    //     generic: 'Rivaroxaban',
+    //     category: 'Cardiovascular - NOACs',
+    //     brandSyllables: 'Xa-rel-to',
+    //     genericSyllables: 'Ri-va-rox-a-ban',
+    // },
+    // {
+    //     brand: 'Eliquis',
+    //     generic: 'Apixaban',
+    //     category: 'Cardiovascular - NOACs',
+    //     brandSyllables: 'El-i-quis',
+    //     genericSyllables: 'A-pix-a-ban',
+    // },
+
+    // Selective Serotonin Reuptake Inhibitors (SSRIs)
+    {
+        brand: 'Prozac',
+        generic: 'Fluoxetine',
+        category: 'Psychiatric - SSRIs',
+        brandSyllables: 'Pro-zac',
+        genericSyllables: 'Flu-ox-e-tine',
+    },
+    {
+        brand: 'Zoloft',
+        generic: 'Sertraline',
+        category: 'Psychiatric - SSRIs',
+        brandSyllables: 'Zo-loft',
+        genericSyllables: 'Ser-tra-line',
+    },
+    {
+        brand: 'Paxil',
+        generic: 'Paroxetine',
+        category: 'Psychiatric - SSRIs',
+        brandSyllables: 'Pa-xil',
+        genericSyllables: 'Pa-rox-e-tine',
+    },
+    {
+        brand: 'Celexa',
+        generic: 'Citalopram',
+        category: 'Psychiatric - SSRIs',
+        brandSyllables: 'Ce-lex-a',
+        genericSyllables: 'Ci-tal-o-pram',
+    },
+    {
+        brand: 'Lexapro',
+        generic: 'Escitalopram',
+        category: 'Psychiatric - SSRIs',
+        brandSyllables: 'Lex-a-pro',
+        genericSyllables: 'Es-ci-tal-o-pram',
+    },
+
+    // Oral Diabetic Agents - I
+    {
+        brand: 'Glucophage',
+        generic: 'Metformin',
+        category: 'Endocrinology - Oral Diabetic Agents',
+        brandSyllables: 'Glu-co-phage',
+        genericSyllables: 'Met-for-min',
+    },
+    {
+        brand: 'Januvia',
+        generic: 'Sitagliptin',
+        category: 'Endocrinology - Oral Diabetic Agents',
+        brandSyllables: 'Ja-nu-via',
+        genericSyllables: 'Si-ta-glip-tin',
+    },
+    // {
+    //     brand: 'DiaBeta, Glynase',
+    //     generic: 'Glyburide',
+    //     category: 'Endocrinology - Oral Diabetic Agents',
+    //     brandSyllables: 'Di-a-Be-ta, Gly-nase',
+    //     genericSyllables: 'Gly-bu-ride',
+    // },
+
+    // Injectable Diabetic Agents
+    {
+        brand: 'NovoLOG',
+        generic: 'Insulin aspart',
+        category: 'Endocrinology - Injectable Diabetic Agents',
+        brandSyllables: 'No-vo-LOG',
+        genericSyllables: 'In-su-lin as-part',
+    },
+    {
+        brand: 'HumaLOG',
+        generic: 'Insulin lispro',
+        category: 'Endocrinology - Injectable Diabetic Agents',
+        brandSyllables: 'Hu-ma-LOG',
+        genericSyllables: 'In-su-lin lis-pro',
+    },
+    {
+        brand: 'HumuLIN N, NovoLIN N',
+        generic: 'Insulin NPH',
+        category: 'Endocrinology - Injectable Diabetic Agents',
+        brandSyllables: 'Hu-mu-LIN N, No-vo-LIN N',
+        genericSyllables: 'In-su-lin NPH',
+    },
+];
+export default drugs;

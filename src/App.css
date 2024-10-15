@@ -1,0 +1,113 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrapping */
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.quiz-box {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin-left: auto;
+  flex: 1 1 500px;
+  /* Make it flexible */
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.progress-box {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin-left: auto;
+  flex: 1 1 500px;
+}
+
+.progress-list {
+  background-color: #fff;
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  flex: 1 1 300px;
+  text-align: left;
+  overflow-y: auto;
+  /* Make it scrollable if content is too long */
+  max-height: 500px;
+  /* Limit height to 500px, enable scrolling */
+}
+
+.progress-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.progress-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.progress-list li:last-child {
+  border-bottom: none;
+}
+
+.progress-list li.bold {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    flex-direction: column;
+    /* Stack list and quiz box vertically on small screens */
+    align-items: center;
+  }
+
+  .progress-list {
+    margin-right: 0;
+    /* Remove margin on smaller screens */
+    max-width: 100%;
+    /* Full width on small screens */
+    max-height: 300px;
+    /* Adjust height */
+  }
+
+  .quiz-box,
+  .progress-box {
+    max-width: 100%;
+    /* Full width on small screens */
+  }
+}
