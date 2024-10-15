@@ -1,74 +1,68 @@
+/* Global Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8;
+  /* Light grey background */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4 {
+  color: #2c3e50;
+  /* Dark grey for text */
+}
+
+h2,
+h3,
+h4,
+p,
+li {
+  line-height: 1.5;
+  /* Increase line-height for readability */
+  word-wrap: break-word;
+  /* Ensure words wrap nicely */
+}
+
+/* Layout */
 .App {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #f5f5f5;
-  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .quiz-container {
   display: flex;
-  flex-wrap: wrap;
-  /* Allow wrapping */
-  justify-content: center;
-  max-width: 1200px;
   width: 100%;
 }
 
-.quiz-box {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin-left: auto;
-  flex: 1 1 500px;
-  /* Make it flexible */
-}
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
+.progress-list,
 .progress-box {
   background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin-left: auto;
-  flex: 1 1 500px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Drug List (left side) */
 .progress-list {
-  background-color: #fff;
-  padding: 20px;
+  flex: 1;
   margin-right: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  flex: 1 1 300px;
-  text-align: left;
+  max-height: 80vh;
   overflow-y: auto;
-  /* Make it scrollable if content is too long */
-  max-height: 500px;
-  /* Limit height to 500px, enable scrolling */
+  min-width: 250px;
+  /* Ensure minimum width for better readability */
+  word-wrap: break-word;
+  /* Ensure drug names wrap properly */
+}
+
+.progress-list h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .progress-list ul {
@@ -77,37 +71,167 @@ button:hover {
 }
 
 .progress-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #e9f5ff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  /* Larger font size for better readability */
 }
 
-.progress-list li:last-child {
-  border-bottom: none;
+.progress-list li:hover {
+  background-color: #d0e6f7;
 }
 
 .progress-list li.bold {
   font-weight: bold;
 }
 
+.progress-list li.completed {
+  text-decoration: line-through;
+  color: #95a5a6;
+}
+
+/* Main Quiz Box (center) */
+.quiz-box {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+  max-width: 600px;
+  /* Limit width for better text wrapping */
+}
+
+.quiz-box h2 {
+  font-size: 1.8rem;
+  /* Slightly smaller for better wrapping */
+  margin-bottom: 10px;
+  text-align: center;
+  /* Center align the text for better presentation */
+}
+
+.quiz-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+  /* Center align for consistency */
+}
+
+.quiz-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+  text-align: center;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  /* Distribute buttons evenly */
+  flex-wrap: wrap;
+  /* Wrap buttons on smaller screens */
+  gap: 10px;
+  /* Add consistent spacing between buttons */
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  flex: 1 1 150px;
+  /* Allow buttons to grow and shrink */
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 180px;
+  word-wrap: break-word;
+  /* Ensure long button text wraps */
+}
+
+button:disabled {
+  background-color: #ecf0f1;
+  cursor: not-allowed;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:nth-of-type(1) {
+  background-color: #3498db;
+  /* Blue for showing/hiding syllables */
+  color: white;
+}
+
+button:nth-of-type(2) {
+  background-color: #2ecc71;
+  /* Green for going back */
+  color: white;
+}
+
+button:nth-of-type(3) {
+  background-color: #e74c3c;
+  /* Red for going next */
+  color: white;
+}
+
+button:nth-of-type(4) {
+  background-color: #1abc9c;
+  /* Cyan for pronouncing again */
+  color: white;
+}
+
+button:nth-of-type(5) {
+  background-color: #f39c12;
+  /* Yellow for resetting */
+  color: white;
+}
+
+/* Progress Box (right side) */
+.progress-box {
+  flex: 1;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.progress-box h3 {
+  font-size: 1.4rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .quiz-container {
     flex-direction: column;
-    /* Stack list and quiz box vertically on small screens */
     align-items: center;
   }
 
   .progress-list {
-    margin-right: 0;
-    /* Remove margin on smaller screens */
-    max-width: 100%;
-    /* Full width on small screens */
-    max-height: 300px;
-    /* Adjust height */
+    margin-bottom: 20px;
+    min-width: 100%;
   }
 
-  .quiz-box,
   .progress-box {
-    max-width: 100%;
-    /* Full width on small screens */
+    margin-top: 20px;
+  }
+
+  .button-container {
+    justify-content: center;
+    /* Center align buttons on smaller screens */
+  }
+
+  button {
+    width: 100%;
+    /* Make buttons full width on smaller screens */
   }
 }

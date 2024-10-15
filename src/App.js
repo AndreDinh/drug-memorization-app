@@ -61,12 +61,10 @@ function App() {
               <li
                 key={index}
                 onClick={() => handleSelectDrug(index)}
-                style={{
-                  cursor: 'pointer',
-                  textDecoration: completedDrugs.includes(drug) ? 'line-through' : 'none',
-                  fontWeight: currentDrugIndex === index ? 'bold' : 'normal',
-                  color: completedDrugs.includes(drug) ? 'gray' : 'black',
-                }}
+                className={`
+                  ${completedDrugs.includes(drug) ? 'completed' : ''}
+                  ${currentDrugIndex === index ? 'bold' : ''}
+                `}
               >
                 {drug.brand} ({drug.generic})
               </li>
@@ -83,22 +81,25 @@ function App() {
             Generic Name: {showSyllables ? currentDrug.genericSyllables : currentDrug.generic}
           </h3>
           <h4>Category: {currentDrug.category}</h4>
-          <button onClick={toggleSyllables}>
-            {showSyllables ? 'Hide Syllables' : 'Show Syllables'}
-          </button>
-          <button onClick={handleBack} disabled={currentDrugIndex === 0}>
-            Previous Drug
-          </button>
-          <button onClick={handleNext} disabled={currentDrugIndex === drugsData.length - 1}>
-            Next Drug
-          </button>
-          <button onClick={pronounceDrug} style={{ backgroundColor: 'blue', color: 'white' }}>
-            Pronounce Again
-          </button>
-          {/* Reset Button */}
-          <button onClick={handleReset} style={{ backgroundColor: 'red', color: 'white' }}>
-            Reset
-          </button>
+
+          {/* Button Container */}
+          <div className="button-container">
+            <button onClick={toggleSyllables}>
+              {showSyllables ? 'Hide Syllables' : 'Show Syllables'}
+            </button>
+            <button onClick={handleBack} disabled={currentDrugIndex === 0}>
+              Previous Drug
+            </button>
+            <button onClick={handleNext} disabled={currentDrugIndex === drugsData.length - 1}>
+              Next Drug
+            </button>
+            <button onClick={pronounceDrug}>
+              Pronounce Again
+            </button>
+            <button onClick={handleReset}>
+              Reset
+            </button>
+          </div>
         </div>
 
         {/* Progress Box */}
