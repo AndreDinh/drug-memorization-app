@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/drug-memorization-app/static/css/main.cbfc5249.chunk.css",
+    "main.js": "/drug-memorization-app/static/js/main.7be0f911.chunk.js",
+    "main.js.map": "/drug-memorization-app/static/js/main.7be0f911.chunk.js.map",
+    "runtime~main.js": "/drug-memorization-app/static/js/runtime~main.53ce1e71.js",
+    "runtime~main.js.map": "/drug-memorization-app/static/js/runtime~main.53ce1e71.js.map",
+    "static/js/2.07b41d29.chunk.js": "/drug-memorization-app/static/js/2.07b41d29.chunk.js",
+    "static/js/2.07b41d29.chunk.js.map": "/drug-memorization-app/static/js/2.07b41d29.chunk.js.map",
+    "index.html": "/drug-memorization-app/index.html",
+    "precache-manifest.4c1e4d17111140f3be774fe4ff47c4c2.js": "/drug-memorization-app/precache-manifest.4c1e4d17111140f3be774fe4ff47c4c2.js",
+    "service-worker.js": "/drug-memorization-app/service-worker.js",
+    "static/css/main.cbfc5249.chunk.css.map": "/drug-memorization-app/static/css/main.cbfc5249.chunk.css.map"
+  }
+}
